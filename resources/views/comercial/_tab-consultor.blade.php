@@ -9,7 +9,7 @@
 
                 <div class="col-md-2">
                   <select id="period" name="from-month" class="form-control">
-                    {!! Helper::monthsOpt() !!}
+                    {!! Helper::monthsOpt('from-month') !!}
                   </select>
                 </div>
                 <div class="col-md-2">
@@ -20,7 +20,7 @@
                 <div class="col-md-2 text-center"><h4>a</h4></div>
                 <div class="col-md-2">
                   <select id="period" name="to-month" class="form-control">
-                    {!! Helper::monthsOpt() !!}
+                    {!! Helper::monthsOpt('to-month') !!}
                   </select>
                 </div>
                 <div class="col-md-2">
@@ -29,25 +29,14 @@
                   </select>
                 </div>
               </div>
-
-              
-             <div class="form-group">
-                <label for="consultores" class="col-md-2 control-label">Consultores</label>
-
-                <div class="col-md-4">
-                  <select id="consultores" name="consultores-base" multiple="" class="form-control">
-                    {!! Helper::htmlConsultants() !!}
-                  </select>
-                </div>
-                <div class="col-md-2 text-center">
-                    <button class="btn btn-default" id="add">&gt;&gt;</button>
-                    <button class="btn btn-default" id="remove">&lt;&lt;</button>
-                </div>
-                <div class="col-md-4">
-                  <select id="consultores" name="consultores[]" multiple="" class="form-control"></select>
+               
+               <div class="form-group">
+                 <label for="consultores" class="col-md-2 control-label">Consultores</label>
+                 <div class="checkbox col-md-10">
+                  {!! Helper::htmlBoxConsultants('consultores') !!}
                   <small class="help-block" id="err-consultores">Los consultores son requeridos</small>
                 </div>
-            </div>
+               </div>  
 
               <div class="form-group">
                 <div class="col-md-10 col-md-offset-2">

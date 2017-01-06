@@ -17,13 +17,14 @@ class Comercial extends Controller
     {
         $view_params = [];
 
-        //Getting the POST data
-        $from = $request->input('from-year') . '-' . $request->input('from-month');
-        $to = $request->input('to-year') . '-' . $request->input('to-month');
-        $consultores = $request->input('consultores');
         $action = $request->input('_action');
 
         if($action){
+            //Getting the POST data
+            $from = $request->input('from-year') . '-' . $request->input('from-month');
+            $to = $request->input('to-year') . '-' . $request->input('to-month');
+            $consultores = $request->input('consultores');
+
             //Defining the dates
             $from = "$from-01";
             $to = "$to-01";

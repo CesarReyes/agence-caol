@@ -6,22 +6,17 @@ use Illuminate\Support\Facades\DB;
 
 class Helper
 {
-    public static function monthsOpt()
-    {
+    public static function monthsOpt($post_index = NULL)
+    {   
+        $selected = isset($_POST[$post_index]) ? $_POST[$post_index] : NULL;
+       
+        $meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        foreach($meses as $i => $name):
+            $index = $i + 1;
         ?>
-            <option value="1">Ene</option>
-            <option value="2">Feb</option>
-            <option value="3">Mar</option>
-            <option value="4">Abr</option>
-            <option value="5">May</option>
-            <option value="6">Jun</option>
-            <option value="7">Jul</option>
-            <option value="8">Ago</option>
-            <option value="9">Sep</option>
-            <option value="10">Oct</option>
-            <option value="11">Nov</option>
-            <option value="12">Dic</option>
+            <option value="<?php echo $index ?>" <?php echo ($index == $selected) ? 'selected' : ''  ?>><?php echo $name ?></option>
         <?php
+        endforeach;
     }
 
     public static function yearsOpt($yr_list = [])
@@ -56,8 +51,9 @@ class Helper
                 ORDER BY u.no_usuario");
     }
 
-    public static function htmlConsultants()
+    public static function htmlConsultants($post_index_to_exclude = NULL)
     {
+
         $consultants = Helper::getConsultants();
         foreach($consultants as $c):
         ?>
@@ -65,6 +61,18 @@ class Helper
         <?php
         endforeach;
     }
+    public static function htmlBoxConsultants($box_name)
+    {
+        $selected = isset($_POST[$box_name]) ? $_POST[$box_name] : [];
+
+        $consultants = Helper::getConsultants();
+        foreach($consultants as $c):
+        ?>
+            <label><input name="<?php echo $box_name?>[]" type="checkbox" value="<?php echo $c->co_usuario ?>" <?php echo (in_array($c->co_usuario, $selected)) ? 'checked' : '' ?>> <?php echo $c->no_usuario?></label><br/>
+        <?php
+        endforeach;
+    }
+
 
     public static function format_money($number){
         return number_format ( $number , 2 , "," , "." );
