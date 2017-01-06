@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/comercial/performance', 'Comercial@performance')->name('comercial.performance');
+Route::post('/comercial/performance', 'Comercial@performance')->name('comercial.performance');

@@ -18,6 +18,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url('css/bootstrap-material-design.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url('css/ripples.min.css') }}">
 
+        <link rel="stylesheet" type="text/css" href="{{ url('css/caol.css') }}">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -25,7 +26,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-       
+       @stack('scripts')
     </head>
     <body>
         
@@ -53,5 +54,6 @@
         <script src="{{ url('js/ripples.min.js') }}"></script>
         <script src="{{ url('js/caol.js') }}"></script>
         
+         @stack('inline-scripts')
     </body>
 </html>

@@ -1,0 +1,17 @@
+.active-error{
+    display: inline !important;
+    color: #d43f3a !important;
+}
+
+.money-losts{
+    color: #ff0000 !important;
+}
+
+.money-earnings{
+    color: #0000FF !important;
+}
+
+.chart {
+  width: 100%; 
+  min-height: 450px;
+}
