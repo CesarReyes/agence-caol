@@ -2,7 +2,7 @@
 
 To see online goto
 
-http://66.117.5.227/~caolcesarreyes/public/
+http://66.117.5.227/~caolcesarreyes/public/comercial/performance
 
 100% responsive
 
